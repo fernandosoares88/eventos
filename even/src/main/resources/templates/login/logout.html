@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+	media="screen,projection">
+
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Eventos</title>
+</head>
+<body>
+
+	<div th:replace="~{fragments/commons :: cabecalho}"></div>
+	<div th:replace="~{fragments/commons :: menu}"></div>
+
+	<div class="container">
+
+		<h1>Logout</h1>
+		<p>Você foi deslogado do sistema</p>
+
+	</div>
+	<div th:replace="~{fragments/commons :: rodape}"></div>
+
+	<!-- Compiled and minified JavaScript -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>
