@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Eventos</title>
+</head>
+<body>
+
+	<div id="cabecalho" class="page-header" th:fragment="cabecalho">
+		<header>
+			<div class="container">
+				<h1>Eventos</h1>
+			</div>
+		</header>
+	</div>
+
+	<div id="menu" th:fragment="menu">
+		<nav>
+			<div class="container">
+				<ul>
+					<li><a href="#" th:href="@{/}">Início</a></li>
+					<li><a href="#" th:href="@{/noticias}">Notícias</a></li>
+					<li><a href="#" th:href="@{/programacao}">Programação</a></li>
+					<li><a href="#" th:href="@{/regulamentos}">Regulamentos</a></li>
+					<li><a href="#" th:href="@{/login}">Login</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+
+	<div id="rodape" th:fragment="rodape">
+		<footer class="page-footer">
+			<!-- 			<div class="footer-copyright"> -->
+			<div class="container">
+				<p>Biblioteca&copy;, por Prof. Fernando Soares</p>
+			</div>
+			<!-- 			</div> -->
+		</footer>
+	</div>
+
+</body>
+</html>

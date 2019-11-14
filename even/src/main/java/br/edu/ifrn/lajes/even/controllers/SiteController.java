@@ -8,8 +8,22 @@ public class SiteController {
 	
 	@GetMapping("/")
 	public String index() {
-		System.out.println("Chamou o método index");
-		return "index";
+		return "site/index";
+	}
+	
+	@GetMapping("/noticias")
+	public String noticias() {
+		return "site/noticias";
+	}
+	
+	@GetMapping("/programacao")
+	public String programacao() {
+		return "site/programacao";
+	}
+	
+	@GetMapping("/regulamentos")
+	public String regulamentos() {
+		return "site/regulamentos";
 	}
 
 }
