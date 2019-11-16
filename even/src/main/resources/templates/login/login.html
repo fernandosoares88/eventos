@@ -28,15 +28,17 @@
 				<div class="row">
 					<div class="col-4 center">
 						<label>Matrícula</label> 
-						<input type="text" name="matricula">
+						<input type="text" name="username">
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-4 center">
 						<label>Senha</label> 
-						<input type="password" name="senha">
+						<input type="password" name="password">
 					</div>
 				</div>
+				
+				<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 				
 				<div class="row">
 					<div class="col-4 center">
