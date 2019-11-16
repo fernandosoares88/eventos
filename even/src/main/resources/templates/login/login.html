@@ -23,6 +23,11 @@
 
 		<h1>Faça seu login</h1>
 
+		<div th:if="${param.logout}" class="row">
+					<div class="col-4 center">
+						<p>Até logo!</p>
+					</div>
+				</div>
 		<div id="login">
 			<form action="" method="post">
 				<div class="row">

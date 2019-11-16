@@ -14,7 +14,7 @@
 <meta charset="UTF-8">
 <title>Eventos</title>
 </head>
-<body>
+<body th:with="httpStatus=${T(org.springframework.http.HttpStatus).valueOf(#response.status)}">
 
 	<div th:replace="~{fragments/commons :: cabecalho}"></div>
 	<div th:replace="~{fragments/commons :: menu}"></div>
@@ -24,6 +24,9 @@
 		<h1>Aconteceu um erro no sistema</h1>
 		<p>Não se preocupe, nossos macacos treinados já estão trabalhando
 			em uma solução para o problema</p>
+
+		<h1 th:text="|${httpStatus} - ${httpStatus.reasonPhrase}|">404</h1>
+		<p th:utext="${errorMessage}">Error java.lang.NullPointerException</p>
 
 	</div>
 	<div th:replace="~{fragments/commons :: rodape}"></div>

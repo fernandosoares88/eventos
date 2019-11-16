@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <!--Import Google Icon Font-->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -23,6 +23,7 @@
 	<div class="container">
 
 		<h1>Bem vindo a página do evento</h1>
+		<span sec:authentication="name">Bob</span>
 
 	</div>
 	<div th:replace="~{fragments/commons :: rodape}"></div>

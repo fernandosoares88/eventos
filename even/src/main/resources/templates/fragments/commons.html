@@ -24,9 +24,18 @@
 					<li sec:authorize="hasRole('ROLE_ADMIN')" ><a href="#" th:href="@{/noticias}">Notícias</a></li>
 					<li sec:authorize="hasRole('ROLE_USER')"><a href="#" th:href="@{/programacao}">Programação</a></li>
 					<li sec:authorize="hasRole('ROLE_AVALIADOR')"><a href="#" th:href="@{/regulamentos}">Regulamentos</a></li>
-					<li><a href="#" th:href="@{/login}">Login</a></li>
-					<li><a sec:authorize="hasRole('ADMIN')" href="#" th:href="@{/admin/usuarios}">Lista de
+					
+					<li sec:authorize="hasRole('ADMIN')"><a href="#" th:href="@{/admin/usuarios}">Lista de
 							Usuários</a></li>
+							
+					<li sec:authorize="!isAuthenticated()"><a href="#" th:href="@{/login}">Login</a></li>
+					<li sec:authorize="isAuthenticated()">
+<!-- 						<a href="#" th:href="@{/logout}">Sair</a> -->
+						<form action="/logout" method="post">
+							<button type="submit">Sair</button>
+							<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+						</form>
+					</li>
 				</ul>
 			</div>
 		</nav>
