@@ -1,4 +1,4 @@
-package br.edu.ifrn.lajes.even.controllers.models;
+package br.edu.ifrn.lajes.even.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

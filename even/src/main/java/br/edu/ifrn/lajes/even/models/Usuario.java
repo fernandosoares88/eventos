@@ -1,4 +1,4 @@
-package br.edu.ifrn.lajes.even.controllers.models;
+package br.edu.ifrn.lajes.even.models;
 
 import java.util.Collection;
 import java.util.List;
