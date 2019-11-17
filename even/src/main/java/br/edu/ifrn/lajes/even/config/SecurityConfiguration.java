@@ -15,9 +15,9 @@ public class SecurityConfiguration {
 		
 		builder
 			.inMemoryAuthentication()
-			.withUser("joao").password(encoder.encode("123")).roles("ADMIN", "USER")
+			.withUser("joao").password(encoder.encode("123")).roles("ADMIN", "USUARIO")
 			.and()
-			.withUser("jose").password(encoder.encode("123")).roles("USER", "AVALIADOR");
+			.withUser("jose").password(encoder.encode("123")).roles("USUARIO", "AVALIADOR");
 	}
 
 	@Bean
