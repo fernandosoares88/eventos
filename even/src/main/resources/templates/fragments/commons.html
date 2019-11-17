@@ -21,9 +21,10 @@
 			<div class="container">
 				<ul>
 					<li><a href="#" th:href="@{/}">Início</a></li>
-					<li sec:authorize="hasRole('ROLE_ADMIN')" ><a href="#" th:href="@{/noticias}">Notícias</a></li>
-					<li sec:authorize="hasRole('ROLE_USER')"><a href="#" th:href="@{/programacao}">Programação</a></li>
-					<li sec:authorize="hasRole('ROLE_AVALIADOR')"><a href="#" th:href="@{/regulamentos}">Regulamentos</a></li>
+					<li ><a href="#" th:href="@{/noticias}">Notícias</a></li>
+					<li ><a href="#" th:href="@{/programacao}">Programação</a></li>
+					<li ><a href="#" th:href="@{/regulamentos}">Regulamentos</a></li>
+					<li ><a href="#" th:href="@{/fotos}">Regulamentos</a></li>
 					
 					<li sec:authorize="hasRole('ADMIN')"><a href="#" th:href="@{/admin/usuarios}">Lista de
 							Usuários</a></li>
