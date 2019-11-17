@@ -1,7 +1,6 @@
 package br.edu.ifrn.lajes.even.config;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
@@ -17,8 +16,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/programacao").permitAll()
 				.antMatchers("/regulamentos").permitAll()
 				.antMatchers("/fotos").permitAll()
-				.antMatchers(HttpMethod.GET, "/cadastro").permitAll()
-				.antMatchers(HttpMethod.POST, "/cadastro").permitAll()
+				.antMatchers("/cadastro").permitAll()
 				.antMatchers("/user/**").hasRole("USUARIO")
 				.antMatchers("/ava/**").hasRole("AVALIADOR")
 				.antMatchers("/admin/**").hasRole("ADMIN")
