@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+	media="screen,projection">
+
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Eventos</title>
+</head>
+<body>
+
+	<div th:replace="~{fragments/commons :: cabecalho}"></div>
+	<div th:replace="~{fragments/commons :: menu}"></div>
+
+	<div class="container">
+
+		<h1>Cadastre-se</h1>
+
+		<form action="/cadastro" method="post">
+			<div class="row">
+				<div class="col-12">
+					<label>Nome completo</label>
+					<input type="text" name="nome">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<label>Matricula</label>
+					<input type="number" name="matricula">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<label>Senha</label>
+					<input type="password" name="senha">
+				</div>
+			</div>
+
+			<button type="submit">Cadastrar</button>
+			<button type="reset">Limpar</button>
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+		</form>
+
+	</div>
+	<div th:replace="~{fragments/commons :: rodape}"></div>
+
+	<!-- Compiled and minified JavaScript -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>
