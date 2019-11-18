@@ -11,12 +11,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.
 			authorizeRequests()
-				.antMatchers("/").permitAll()
-				.antMatchers("/noticias").permitAll()
-				.antMatchers("/programacao").permitAll()
-				.antMatchers("/regulamentos").permitAll()
-				.antMatchers("/fotos").permitAll()
-				.antMatchers("/cadastro").permitAll()
+				.antMatchers("/*").permitAll() // Isso substitui as linhas abaixo
+//				.antMatchers("/").permitAll()
+//				.antMatchers("/noticias").permitAll()
+//				.antMatchers("/programacao").permitAll()
+//				.antMatchers("/regulamentos").permitAll()
+//				.antMatchers("/fotos").permitAll()
+//				.antMatchers("/cadastro").permitAll()
 				.antMatchers("/user/**").hasRole("USUARIO")
 				.antMatchers("/ava/**").hasRole("AVALIADOR")
 				.antMatchers("/admin/**").hasRole("ADMIN")
