@@ -31,7 +31,7 @@
 							
 					<li sec:authorize="!isAuthenticated()"><a href="#" th:href="@{/cadastro}">Cadastre-se</a></li>
 					<li sec:authorize="!isAuthenticated()"><a href="#" th:href="@{/login}">Login</a></li>
-					<li sec:authorize="isAuthenticated()">
+					<li class="right" sec:authorize="isAuthenticated()">
 <!-- 						<a href="#" th:href="@{/logout}">Sair</a> -->
 						<form action="/logout" method="post">
 							<button type="submit">Sair</button>
