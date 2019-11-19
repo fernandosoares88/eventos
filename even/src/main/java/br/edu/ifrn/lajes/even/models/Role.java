@@ -19,7 +19,6 @@ public class Role implements GrantedAuthority {
 
 	@Override
 	public String getAuthority() {
-		// TODO Auto-generated method stub
 		return this.nome;
 	}
 
@@ -37,6 +36,11 @@ public class Role implements GrantedAuthority {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	@Override
+	public String toString() {
+		return "Role [id=" + id + ", nome=" + nome + "]";
 	}
 
 }
