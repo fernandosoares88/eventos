@@ -27,7 +27,7 @@ public class SiteController {
 	}
 
 	@GetMapping("/fotos")
-	public String teste() {
+	public String fotos() {
 		return "site/fotos";
 	}
 
