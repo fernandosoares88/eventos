@@ -20,7 +20,6 @@ public class UsuarioController {
 
 	@GetMapping("/cadastro")
 	public String form() {
-		System.out.println("Chamou método do formulárioi");
 		return "usuarios/form";
 	}
 
