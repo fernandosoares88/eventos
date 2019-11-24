@@ -52,18 +52,14 @@
 					<div class="row">
 						<div class="col s2">Papeis:</div>
 						<div class="col s10">
-							<div th:each="papel : ${papeis}">
+							<div th:each="papel : ${papeis}" class="switch">
+							<div class="row">
 								<label> 
-<!-- 									<input th:if="${!usuario.roles.contains(papel)}" type="checkbox" th:name="usuario.roles" th:value="${papel.id}" /> -->
-<!-- 									<input th:if="${usuario.roles.contains(papel)}" type="checkbox" th:name="usuario.roles" th:value="${papel.id}" checked="checked"/>  -->
 									<input type="checkbox" th:field="*{roles}" th:value="${papel.id}"/> 
-									<span th:text="${papel.nome}">Heating</span>
+									<span class="lever"></span>
+									<span th:text="${papel.nome}"></span>
 								</label>
-
-<!-- 									<input type="checkbox" th:field="*{features}" th:value="${feat}" />  -->
-<!-- 									<label th:for="${#ids.prev('features')}" -->
-<!-- 										th:text="#{${'seedstarter.feature.' + feat}}">Heating</label> -->
-
+								</div>
 							</div>
 						</div>
 					</div>
