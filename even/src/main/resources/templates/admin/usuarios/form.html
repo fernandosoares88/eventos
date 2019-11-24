@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+	media="screen,projection">
+
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Eventos</title>
+</head>
+<body>
+
+	<div th:replace="~{fragments/commons :: cabecalho}"></div>
+	<div th:replace="~{fragments/commons :: menu}"></div>
+
+	<div class="container">
+		<div class="row">
+			<div>
+				<h3>Editar papéis do usuário</h3>
+			</div>
+		</div>
+		<div class="row">
+			<form action="#"
+				th:action="@{/admin/usuarios/{id}(id=${usuario.id})}" th:object="${usuario}" method="post">
+				<input type="hidden" th:field="${id}">
+				<blockquote>
+					<div class="row">
+						<div class="col s2">Nome:</div>
+						<div class="col s10">
+							<span th:text="${usuario.nome}"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s2">Matrícula:</div>
+						<div class="col s10">
+							<span th:text="${usuario.matricula}"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s2">Email:</div>
+						<div class="col s10">
+							<span th:text="${usuario.email}"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s2">Papeis:</div>
+						<div class="col s10">
+							<div th:each="papel : ${papeis}">
+								<label> 
+<!-- 									<input th:if="${!usuario.roles.contains(papel)}" type="checkbox" th:name="usuario.roles" th:value="${papel.id}" /> -->
+<!-- 									<input th:if="${usuario.roles.contains(papel)}" type="checkbox" th:name="usuario.roles" th:value="${papel.id}" checked="checked"/>  -->
+									<input type="checkbox" th:field="*{roles}" th:value="${papel.id}"/> 
+									<span th:text="${papel.nome}">Heating</span>
+								</label>
+
+<!-- 									<input type="checkbox" th:field="*{features}" th:value="${feat}" />  -->
+<!-- 									<label th:for="${#ids.prev('features')}" -->
+<!-- 										th:text="#{${'seedstarter.feature.' + feat}}">Heating</label> -->
+
+							</div>
+						</div>
+					</div>
+				</blockquote>
+				<div class="row">
+					<div class="col">
+						<button class="btn" type="submit">Salvar</button>
+					</div>
+					<div class="col">
+						<a class="btn" th:href="@{/admin/usuarios}">Cancelar</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div th:replace="~{fragments/commons :: rodape}"></div>
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>

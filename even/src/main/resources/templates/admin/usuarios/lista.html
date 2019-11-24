@@ -22,7 +22,7 @@
 
 	<div class="container">
 		<div class="row">
-			<h1>Cadastre-se</h1>
+			<h1>Usuários cadastrados</h1>
 		</div>
 		<div class="row">
 			<table class="highlight">
@@ -30,12 +30,16 @@
 					<tr>
 						<th>Nome</th>
 						<th>Matrícula</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="usuario : ${usuarios}">
 						<td th:text="${usuario.nome}"></td>
 						<td th:text="${usuario.matricula}"></td>
+						<td class="right-align"><a
+							th:href="@{/admin/usuarios/{id}(id=${usuario.id})}"><i
+								class="material-icons">edit</i></a></td>
 					</tr>
 				</tbody>
 			</table>
