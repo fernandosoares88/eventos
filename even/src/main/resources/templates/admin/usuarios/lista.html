@@ -25,6 +25,21 @@
 			<h1>Usuários cadastrados</h1>
 		</div>
 		<div class="row">
+			<form th:action="@{/admin/usuarios}" method="get">
+				<!-- 				<div class="col s1"> -->
+				<!-- 					<label>Nome</label> -->
+				<!-- 				</div> -->
+				<div class="col s6">
+					<input type="text" name="filter" placeholder="Nome"
+						required="required" th:value="${param.filter}"
+						autofocus="autofocus">
+				</div>
+				<div class="col s1">
+					<button class="btn" type="submit">Filtrar</button>
+				</div>
+			</form>
+		</div>
+		<div class="row">
 			<table class="highlight">
 				<thead>
 					<tr>

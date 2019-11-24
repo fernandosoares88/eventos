@@ -9,5 +9,7 @@ import br.edu.ifrn.lajes.even.models.Usuario;
 public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
 	
 	Usuario findByMatricula(String matricula);
+	
+	Iterable<Usuario> findAllByNomeContaining(String nome);
 
 }
