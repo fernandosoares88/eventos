@@ -23,7 +23,7 @@
 	<div class="container">
 
 		<h1>Bem vindo a página do evento</h1>
-		<span sec:authentication="name">Bob</span>
+		<span sec:authorize="isAuthenticated()" sec:authentication="principal.nome">Bob</span>
 
 	</div>
 	<div th:replace="~{fragments/commons :: rodape}"></div>
