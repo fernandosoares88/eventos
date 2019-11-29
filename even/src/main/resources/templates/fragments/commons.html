@@ -17,27 +17,42 @@
 	</div>
 
 	<div id="menu" th:fragment="menu">
+
+		<ul id="dropdown-admin" class="dropdown-content">
+			<li><a href="#!">Editar dados</a></li>
+			<li class="divider"></li>
+			<li><a href="#!">Alterar Senha</a></li>
+			<li class="divider"></li>
+			<li>
+				<!-- 						<a href="#" th:href="@{/logout}">Sair</a> -->
+				<form action="/logout" method="post">
+					<button class="btn" type="submit">Sair</button>
+					<input type="hidden" th:name="${_csrf.parameterName}"
+						th:value="${_csrf.token}" />
+				</form>
+			</li>
+		</ul>
 		<nav>
 			<div class="container">
 				<ul>
 					<li><a href="#" th:href="@{/}">Início</a></li>
-					<li ><a href="#" th:href="@{/noticias}">Notícias</a></li>
-					<li ><a href="#" th:href="@{/programacao}">Programação</a></li>
-					<li ><a href="#" th:href="@{/regulamentos}">Regulamentos</a></li>
-					<li ><a href="#" th:href="@{/fotos}">Fotos</a></li>
-					
-					<li sec:authorize="hasRole('ADMIN')"><a href="#" th:href="@{/admin/usuarios}">Lista de
-							Usuários</a></li>
-							
-					<li sec:authorize="!isAuthenticated()"><a href="#" th:href="@{/cadastro}">Cadastre-se</a></li>
-					<li sec:authorize="!isAuthenticated()"><a href="#" th:href="@{/login}">Login</a></li>
-					<li class="right" sec:authorize="isAuthenticated()">
-<!-- 						<a href="#" th:href="@{/logout}">Sair</a> -->
-						<form action="/logout" method="post">
-							<button class="btn" type="submit">Sair</button>
-							<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-						</form>
-					</li>
+					<li><a href="#" th:href="@{/noticias}">Notícias</a></li>
+					<li><a href="#" th:href="@{/programacao}">Programação</a></li>
+					<li><a href="#" th:href="@{/regulamentos}">Regulamentos</a></li>
+					<li><a href="#" th:href="@{/fotos}">Fotos</a></li>
+
+					<li sec:authorize="hasRole('ADMIN')"><a href="#"
+						th:href="@{/admin/usuarios}">Lista de Usuários</a></li>
+
+					<li sec:authorize="!isAuthenticated()"><a href="#"
+						th:href="@{/cadastro}">Cadastre-se</a></li>
+					<li sec:authorize="!isAuthenticated()"><a href="#"
+						th:href="@{/login}">Login</a></li>
+					<li class="right" sec:authorize="isAuthenticated()"><a
+						class="dropdown-trigger" href="#!" data-target="dropdown-admin"><span
+							sec:authorize="isAuthenticated()"
+							sec:authentication="principal.nome">Bob</span><i
+							class="material-icons right">arrow_drop_down</i></a></li>
 				</ul>
 			</div>
 		</nav>
@@ -52,6 +67,16 @@
 			</div>
 			<!-- 			</div> -->
 		</footer>
+	</div>
+
+	<div id="main-js" th:fragment="main-js">
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 	</div>
 
 </body>
