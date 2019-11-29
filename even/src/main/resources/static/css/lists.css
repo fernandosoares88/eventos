@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+
+/* Formatando formulário para parecer com Link*/
+/* Geralmente utilizado para links de remoção em tabelas */
+.form-link-like {
+	display: inline;
+}
+
+.form-link-like button {
+	background-color: transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	color: #039be5;
+}
