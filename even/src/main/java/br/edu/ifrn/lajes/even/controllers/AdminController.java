@@ -39,7 +39,7 @@ public class AdminController {
 	@GetMapping("/usuarios/{id}")
 	public ModelAndView selecionaUsuario(@PathVariable("id") Long id) {
 		Usuario usuario = ur.findById(id).get();
-		Iterable<Role> papeis = rr.findAll();
+		Iterable<Role> papeis = rr.findAllByOrderByNomeAsc();
 		
 		ModelAndView mv = new ModelAndView("admin/usuarios/form");
 		mv.addObject("usuario", usuario);

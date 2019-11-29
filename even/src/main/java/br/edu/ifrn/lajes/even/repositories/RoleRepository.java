@@ -9,5 +9,7 @@ import br.edu.ifrn.lajes.even.models.Role;
 public interface RoleRepository extends CrudRepository<Role, Long> {
 	
 	Role findByNome(String nome);
+	
+	Iterable<Role> findAllByOrderByNomeAsc();
 
 }
